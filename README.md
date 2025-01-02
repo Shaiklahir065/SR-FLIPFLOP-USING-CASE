@@ -10,23 +10,6 @@ Quartus prime
 
 **THEORY**
 
-      module sr_ff(s,r,clk,q,qbar);
-      input s,r,clk;
-      output reg q;
-      output reg qbar;
-      initial 
-      begin
-      q=0;
-      qbar=1;
-      end
-      always @(posedge clk)
-      begin
-         q=s|(~r&q);
-         qbar=r|(~s&~q);
-      end
-      endmodule
-
-
 ![image](https://github.com/naavaneetha/SR-FLIPFLOP-USING-CASE/assets/154305477/0f710028-ad52-4d3e-9276-8714cf023a25)
 
  
@@ -49,22 +32,46 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+            module sr_ff(s,r,clk,q,qbar);
+                  input s,r,clk;
+                  output reg q;
+                  output reg qbar;
+                  initial 
+                  begin
+                  q=0;
+                  qbar=1;
+                  end
+                  always @(posedge clk)
+                  begin
+                     q=s|(~r&q);
+                     qbar=r|(~s&~q);
+                  end
+                  endmodule
+ 
 
 Developed by:shaik lahir
 
 RegisterNumber:24005737
-*/
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 ![WhatsApp Image 2024-12-20 at 14 45 14_78bc02f8](https://github.com/user-attachments/assets/0e756fec-8bac-4d36-b6f4-e5a1cfe93c26)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![WhatsApp Image 2024-12-20 at 14 45 24_3f8e5449](https://github.com/user-attachments/assets/86c16042-1065-4490-8da4-cd5b1dd386ee)
+
+![image](https://github.com/user-attachments/assets/3a5c7def-c44c-42a5-af40-0c978b39c40e)
 
 **RESULTS**
 Thus the program to implement SR flipflop using verilog and validating their functionality using their functional tables has been verified successfully.
